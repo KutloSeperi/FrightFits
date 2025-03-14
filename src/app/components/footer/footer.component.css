@@ -1,0 +1,48 @@
+footer {
+    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    border-top: 2px solid #ff6f61;
+    padding: 2rem 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  footer h5 {
+    font-family: 'Creepster', cursive;
+    color: #ff6f61;
+    text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61;
+    margin-bottom: 1rem;
+  }
+  
+  footer p {
+    color: #a1a1aa;
+    margin-bottom: 0.5rem;
+  }
+  
+  footer a {
+    color: #a1a1aa;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: #ff6f61;
+    text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61;
+  }
+  
+  footer ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  footer ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  footer .text-center {
+    margin-top: 2rem;
+    border-top: 1px solid #ff6f61;
+    padding-top: 1rem;
+  }
+  
+  footer .text-center p {
+    margin-bottom: 0;
+  }

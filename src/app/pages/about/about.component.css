@@ -1,0 +1,84 @@
+/* About Section Styles */
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateZ(0); /* Hardware acceleration */
+    will-change: transform;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  .bg-dark-80 {
+    background-color: rgba(31, 41, 55, 0.9); /* Using zinc-800 base */
+    backdrop-filter: blur(5px);
+  }
+  
+  .client-logo {
+    width: 120px;
+    height: 60px;
+    object-fit: contain;
+    padding: 1rem;
+    margin: 0 1.5rem;
+    transition: 
+      filter 0.4s ease-in-out,
+      opacity 0.4s ease-in-out,
+      transform 0.3s ease;
+    filter: grayscale(1) brightness(0.8);
+  }
+  
+  .client-logo:hover {
+    filter: grayscale(0) brightness(1.2);
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  
+  /* Timeline Structure Fix */
+  .timeline {
+    position: relative;
+    padding: 2rem 0;
+  }
+  
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: linear-gradient(
+      to bottom,
+      rgba(249, 115, 22, 0),
+      #f97316,
+      rgba(249, 115, 22, 0)
+    );
+    left: 50%;
+    top: 50px;
+    bottom: 50px;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .timeline::after {
+      left: 30px;
+      height: 4px;
+      width: calc(100% - 60px);
+      top: auto;
+      bottom: auto;
+      transform: none;
+    }
+  
+    .client-logo {
+      margin: 1rem;
+      width: 100px;
+    }
+  
+    .hover-lift:hover {
+      transform: translateY(-5px) scale(1.01);
+    }
+  }
+  
+  /* Smooth Transitions */
+  .grayscale {
+    transition: filter 0.4s ease-in-out;
+  }

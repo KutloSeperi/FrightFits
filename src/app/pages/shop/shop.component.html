@@ -1,37 +1,241 @@
 <section class="shop-section py-5 bg-dark text-white">
-    <div class="container">
-      <h2 class="text-center mb-5 display-4">Shop All Costumes</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card bg-zinc-800 border-zinc-700">
-            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Product 1">
-            <div class="card-body text-center">
-              <h5 class="card-title text-white">Spooky Ghost</h5>
-              <p class="card-text text-orange-500">$29.99</p>
+  <div class="container">
+    <!-- Featured Banner -->
+    <div class="featured-product mb-5 rounded-3 overflow-hidden bg-zinc-900 border border-zinc-700">
+      <div class="row g-0 align-items-center">
+        <div class="col-md-6 order-md-2">
+          <img src="assets/images/featured-phantom.jpg" class="img-fluid" alt="Phantom Queen Costume">
+        </div>
+        <div class="col-md-6 order-md-1 p-4 p-lg-5">
+          <span class="badge bg-orange-500 mb-3">Limited Edition</span>
+          <h3 class="display-5 fw-bold text-orange-500">Season's Bestseller</h3>
+          <h2 class="mb-4">Phantom Queen Costume</h2>
+          <p class="lead">Premium silk costume with hand-stitched details, including matching gloves, crown, and veil. Available in sizes S-XXL.</p>
+          <div class="d-flex gap-3 align-items-center">
+            <span class="h3 text-orange-500 mb-0">$89.99</span>
+            <del class="text-zinc-500">$129.99</del>
+            <a href="#" class="btn btn-primary btn-lg px-4">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="category-filters mb-5 text-center">
+      <h4 class="mb-4">Browse by Category</h4>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="#" class="btn btn-outline-orange-500 active">All</a>
+        <a href="#" class="btn btn-outline-orange-500">Horror</a>
+        <a href="#" class="btn btn-outline-orange-500">Fantasy</a>
+        <a href="#" class="btn btn-outline-orange-500">Classic</a>
+        <a href="#" class="btn btn-outline-orange-500">Kids</a>
+        <a href="#" class="btn btn-outline-orange-500">Accessories</a>
+      </div>
+    </div>
+
+    <!-- Main Product Grid -->
+    <h2 class="text-center mb-5 display-4">Popular Costumes</h2>
+    <div class="row g-4">
+      <!-- Vampire -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-zinc-800 border-zinc-700 hover-shadow-lg transition-all h-100">
+          <div class="position-relative overflow-hidden">
+            <img src="assets/images/vampire-costume.jpg" class="card-img-top scale-on-hover" alt="Vampire Costume">
+            <span class="badge bg-orange-500 position-absolute top-0 start-0 m-3">-20%</span>
+          </div>
+          <div class="card-body text-center">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="card-title text-white mb-0">Vampire Lord</h5>
+              <div>
+                <span class="text-orange-500">$59.99</span>
+                <del class="text-zinc-500 small ms-2">$74.99</del>
+              </div>
+            </div>
+            <p class="text-zinc-400 small">Velvet cape with blood-red lining, includes fangs and medallion</p>
+            <div class="d-grid gap-2">
               <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="#" class="btn btn-link text-orange-500 p-0">Quick View</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="card bg-zinc-800 border-zinc-700">
-            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Product 2">
-            <div class="card-body text-center">
-              <h5 class="card-title text-white">Wicked Witch</h5>
-              <p class="card-text text-orange-500">$39.99</p>
+      </div>
+
+      <!-- Werewolf -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-zinc-800 border-zinc-700 hover-shadow-lg transition-all h-100">
+          <div class="position-relative overflow-hidden">
+            <img src="assets/images/werewolf-costume.jpg" class="card-img-top scale-on-hover" alt="Werewolf Costume">
+            <span class="badge bg-danger position-absolute top-0 end-0 m-3">New</span>
+          </div>
+          <div class="card-body text-center">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="card-title text-white mb-0">Alpha Werewolf</h5>
+              <span class="text-orange-500">$69.99</span>
+            </div>
+            <p class="text-zinc-400 small">Realistic fur costume with glowing eyes and claw gloves</p>
+            <div class="d-grid gap-2">
               <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="#" class="btn btn-link text-orange-500 p-0">Quick View</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="card bg-zinc-800 border-zinc-700">
-            <img src="https://via.placeholder.com/300" class="card-img-top" alt="Product 3">
-            <div class="card-body text-center">
-              <h5 class="card-title text-white">Zombie</h5>
-              <p class="card-text text-orange-500">$49.99</p>
+      </div>
+
+      <!-- Frankenstein -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-zinc-800 border-zinc-700 hover-shadow-lg transition-all h-100">
+          <div class="position-relative overflow-hidden">
+            <img src="assets/images/frankenstein-costume.jpg" class="card-img-top scale-on-hover" alt="Frankenstein Costume">
+            <span class="badge bg-success position-absolute top-0 start-0 m-3">Eco-Friendly</span>
+          </div>
+          <div class="card-body text-center">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="card-title text-white mb-0">Frankenstein</h5>
+              <span class="text-orange-500">$79.99</span>
+            </div>
+            <p class="text-zinc-400 small">Glow-in-the-dark costume with detachable neck bolts</p>
+            <div class="d-grid gap-2">
               <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="#" class="btn btn-link text-orange-500 p-0">Quick View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Witch -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-zinc-800 border-zinc-700 hover-shadow-lg transition-all h-100">
+          <div class="position-relative overflow-hidden">
+            <img src="assets/images/witch-costume.jpg" class="card-img-top scale-on-hover" alt="Witch Costume">
+            <span class="badge bg-orange-500 position-absolute top-0 start-0 m-3">Bundle Deal</span>
+          </div>
+          <div class="card-body text-center">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="card-title text-white mb-0">Dark Witch</h5>
+              <span class="text-orange-500">$99.99</span>
+            </div>
+            <p class="text-zinc-400 small">Complete set with hat, broom, and spellbook</p>
+            <div class="d-grid gap-2">
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="#" class="btn btn-link text-orange-500 p-0">Quick View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Zombie -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-zinc-800 border-zinc-700 hover-shadow-lg transition-all h-100">
+          <div class="position-relative overflow-hidden">
+            <img src="assets/images/zombie-costume.jpg" class="card-img-top scale-on-hover" alt="Zombie Costume">
+          </div>
+          <div class="card-body text-center">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="card-title text-white mb-0">Rotten Zombie</h5>
+              <span class="text-orange-500">$49.99</span>
+            </div>
+            <p class="text-zinc-400 small">Realistic wound prosthetics included</p>
+            <div class="d-grid gap-2">
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="#" class="btn btn-link text-orange-500 p-0">Quick View</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ghost -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card bg-zinc-800 border-zinc-700 hover-shadow-lg transition-all h-100">
+          <div class="position-relative overflow-hidden">
+            <img src="assets/images/ghost-costume.jpg" class="card-img-top scale-on-hover" alt="Ghost Costume">
+          </div>
+          <div class="card-body text-center">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="card-title text-white mb-0">Spectral Ghost</h5>
+              <span class="text-orange-500">$39.99</span>
+            </div>
+            <p class="text-zinc-400 small">Glowing ethereal costume with motion effects</p>
+            <div class="d-grid gap-2">
+              <a href="#" class="btn btn-primary">Add to Cart</a>
+              <a href="#" class="btn btn-link text-orange-500 p-0">Quick View</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- Accessories Carousel -->
+    <div class="accessories-scroll mt-5 pt-5">
+      <h4 class="mb-4">Complete Your Look</h4>
+      <div class="d-flex flex-nowrap overflow-x-auto pb-3 scrollbar-hidden">
+        <div class="card bg-zinc-800 border-zinc-700 me-3 flex-shrink-0" style="width: 300px;">
+          <img src="assets/images/vampire-fangs.jpg" class="card-img-top" alt="Vampire Fangs">
+          <div class="card-body">
+            <h6 class="text-white">Premium Vampire Fangs</h6>
+            <p class="text-orange-500 mb-0">$19.99</p>
+          </div>
+        </div>
+        <div class="card bg-zinc-800 border-zinc-700 me-3 flex-shrink-0" style="width: 300px;">
+          <img src="assets/images/werewolf-claws.jpg" class="card-img-top" alt="Werewolf Claws">
+          <div class="card-body">
+            <h6 class="text-white">Retractable Claw Gloves</h6>
+            <p class="text-orange-500 mb-0">$29.99</p>
+          </div>
+        </div>
+        <div class="card bg-zinc-800 border-zinc-700 me-3 flex-shrink-0" style="width: 300px;">
+          <img src="assets/images/witch-hat.jpg" class="card-img-top" alt="Witch Hat">
+          <div class="card-body">
+            <h6 class="text-white">Enchanted Witch Hat</h6>
+            <p class="text-orange-500 mb-0">$34.99</p>
+          </div>
+        </div>
+        <div class="card bg-zinc-800 border-zinc-700 me-3 flex-shrink-0" style="width: 300px;">
+          <img src="assets/images/zombie-makeup.jpg" class="card-img-top" alt="Zombie Makeup Kit">
+          <div class="card-body">
+            <h6 class="text-white">Professional FX Makeup Kit</h6>
+            <p class="text-orange-500 mb-0">$49.99</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Halloween Essentials -->
+    <div class="essentials-grid mt-5 pt-5">
+      <h4 class="text-center mb-5">Halloween Essentials</h4>
+      <div class="row g-4">
+        <div class="col-md-3">
+          <div class="card bg-zinc-800 border-zinc-700 text-center p-4 hover-lift h-100">
+            <i class="fas fa-hat-wizard text-orange-500 h2 mb-3"></i>
+            <h5>Hats & Wigs</h5>
+            <p class="text-zinc-400 small">200+ styles from classic to crazy</p>
+            <a href="#" class="stretched-link"></a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card bg-zinc-800 border-zinc-700 text-center p-4 hover-lift h-100">
+            <i class="fas fa-mask text-orange-500 h2 mb-3"></i>
+            <h5>Masks</h5>
+            <p class="text-zinc-400 small">Latex, plastic, and fabric options</p>
+            <a href="#" class="stretched-link"></a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card bg-zinc-800 border-zinc-700 text-center p-4 hover-lift h-100">
+            <i class="fas fa-hand-sparkles text-orange-500 h2 mb-3"></i>
+            <h5>Props</h5>
+            <p class="text-zinc-400 small">Weapons, jewelry, and magical items</p>
+            <a href="#" class="stretched-link"></a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card bg-zinc-800 border-zinc-700 text-center p-4 hover-lift h-100">
+            <i class="fas fa-paint-brush text-orange-500 h2 mb-3"></i>
+            <h5>Makeup</h5>
+            <p class="text-zinc-400 small">Kits and professional supplies</p>
+            <a href="#" class="stretched-link"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

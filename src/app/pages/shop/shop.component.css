@@ -1,0 +1,64 @@
+/* Custom Hover Effects */
+.scale-on-hover {
+    transition: transform 0.3s ease;
+    transform-origin: center;
+  }
+  .scale-on-hover:hover {
+    transform: scale(1.05);
+  }
+  
+  .hover-shadow-lg {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .hover-shadow-lg:hover {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.5);
+    transform: translateY(-3px);
+  }
+  
+  .hover-lift {
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  .hover-lift:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Custom Button Styles */
+  .btn-outline-orange-500 {
+    border: 2px solid #f97316;
+    color: #f97316;
+    transition: all 0.2s ease;
+  }
+  .btn-outline-orange-500:hover {
+    background: #f97316;
+    color: white;
+    border-color: transparent;
+  }
+  
+  /* Scrollbar Hide */
+  .scrollbar-hidden {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Stretched Link Fix */
+  .stretched-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  /* Fix for transform overflow */
+  .card {
+    overflow: hidden;
+  }
+  .card-img-top {
+    backface-visibility: hidden;
+  }
