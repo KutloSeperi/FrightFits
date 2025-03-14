@@ -1,32 +1,54 @@
 <section class="cart-section py-5 bg-dark text-white">
-    <div class="container">
-      <h2 class="text-center mb-5 display-4">Your Cart</h2>
-      <div class="row">
-        <div class="col-md-8">
-          <div class="card mb-3 bg-zinc-800 border-zinc-700">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="https://via.placeholder.com/300" class="img-fluid rounded-start" alt="Product 1">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title text-white">Spooky Ghost</h5>
-                  <p class="card-text text-orange-500">$29.99</p>
-                  <button class="btn btn-danger">Remove</button>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div class="container">
+    <h2 class="text-center mb-5 display-4">Your Cart</h2>
+    
+    <!-- Construction Message -->
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="card bg-zinc-800 border-zinc-700 p-4 text-center">
+          <i class="fas fa-tools h2 text-orange-500 mb-3"></i>
+          <h3 class="text-white">Cart System Under Construction</h3>
+          <p class="text-warning mb-0">
+            Full cart functionality coming soon! You can still review items and remove them,
+            but checkout is not yet available.
+          </p>
         </div>
-        <div class="col-md-4">
-          <div class="card bg-zinc-800 border-zinc-700">
-            <div class="card-body text-center">
-              <h5 class="card-title text-white">Order Summary</h5>
-              <p class="card-text text-orange-500">Total: $69.98</p>
-              <a href="#" class="btn btn-primary">Checkout</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+        <!-- Cart Items -->
+        <div *ngIf="cartItems.length === 0" class="text-center">
+          <p class="text-zinc-400">Your cart is empty.</p>
+        </div>
+        <div *ngFor="let item of cartItems; let i = index" class="card mb-3 bg-zinc-800 border-zinc-700">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img [src]="item.image" class="img-fluid rounded-start" [alt]="item.name">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-white">{{ item.name }}</h5>
+                <p class="card-text text-orange-500">${{ item.price }}</p>
+                <button class="btn btn-danger" (click)="removeFromCart(i)">Remove</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="col-md-4">
+        <!-- Order Summary -->
+        <div class="card bg-zinc-800 border-zinc-700">
+          <div class="card-body text-center">
+            <h5 class="card-title text-white">Order Summary</h5>
+            <p class="card-text text-orange-500">Total: ${{ cartTotal | number:'1.2-2' }}</p>
+            <button class="btn btn-primary" disabled title="Checkout coming soon!">
+              Checkout (Coming Soon)
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>

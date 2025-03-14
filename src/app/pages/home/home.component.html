@@ -1,6 +1,3 @@
-
-
-
 <section class="hero-section bg-dark text-white text-center py-5">
   <div class="container">
     <h1 class="display-4 animate__animated animate__fadeInDown">Welcome to FrightFits</h1>
@@ -8,6 +5,7 @@
     <a routerLink="/shop" class="btn btn-primary btn-lg animate__animated animate__fadeIn">Shop Now</a>
   </div>
 </section>
+
 <section class="halloween-events py-5 bg-dark text-white">
   <div class="container">
     <h2 class="text-center mb-4 display-4 animate__animated animate__fadeIn">Upcoming Halloween Events</h2>
@@ -48,33 +46,13 @@
   <div class="container">
     <h2 class="text-center mb-5 display-4 animate__animated animate__fadeIn">Featured Products</h2>
     <div class="row">
-      <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
+      <div *ngFor="let product of products.slice(0, 3)" class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
         <div class="card bg-zinc-800 border-zinc-700">
-          <img src="assets/images/gst.jpg" class="card-img-top" alt="Spooky Ghost Costume">
+          <img [src]="product.image" class="card-img-top" [alt]="product.name">
           <div class="card-body text-center">
-            <h5 class="card-title text-white">Spooky Ghost</h5>
-            <p class="card-text text-orange-500">$29.99</p>
-            <button class="btn btn-primary" (click)="addToCart('Spooky Ghost')">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
-        <div class="card bg-zinc-800 border-zinc-700">
-          <img src="assets/images/witch.jpg" class="card-img-top" alt="Wicked Witch Costume">
-          <div class="card-body text-center">
-            <h5 class="card-title text-white">Wicked Witch</h5>
-            <p class="card-text text-orange-500">$39.99</p>
-            <button class="btn btn-primary" (click)="addToCart('Wicked Witch')">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 animate__animated animate__fadeInRight">
-        <div class="card bg-zinc-800 border-zinc-700">
-          <img src="assets/images/zombie.jpg" class="card-img-top" alt="Zombie Costume">
-          <div class="card-body text-center">
-            <h5 class="card-title text-white">Zombie</h5>
-            <p class="card-text text-orange-500">$49.99</p>
-            <button class="btn btn-primary" (click)="addToCart('Zombie')">Add to Cart</button>
+            <h5 class="card-title text-white">{{ product.name }}</h5>
+            <p class="card-text text-orange-500">R{{ product.price | number: '1.2-2' }}</p>
+            <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -94,66 +72,26 @@
 
     <h3 class="text-center text-warning mb-5 display-5 animate__animated animate__fadeIn">Best-Sellers</h3>
     <div class="row">
-      <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
+      <div *ngFor="let product of products.slice(3, 6)" class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
         <div class="card bg-zinc-800 border-zinc-700">
-          <img src="assets/images/vampire.jpg" class="card-img-top" alt="Vampire Costume">
+          <img [src]="product.image" class="card-img-top" [alt]="product.name">
           <div class="card-body text-center">
-            <h5 class="card-title text-white">Vampire</h5>
-            <p class="card-text text-orange-500">$34.99</p>
-            <button class="btn btn-primary" (click)="addToCart('Vampire')">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
-        <div class="card bg-zinc-800 border-zinc-700">
-          <img src="assets/images/pirate.jpg" class="card-img-top" alt="Pirate Costume">
-          <div class="card-body text-center">
-            <h5 class="card-title text-white">Pirate</h5>
-            <p class="card-text text-orange-500">$44.99</p>
-            <button class="btn btn-primary" (click)="addToCart('Pirate')">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 animate__animated animate__fadeInRight">
-        <div class="card bg-zinc-800 border-zinc-700">
-          <img src="assets/images/clown.jpg" class="card-img-top" alt="Clown Costume">
-          <div class="card-body text-center">
-            <h5 class="card-title text-white">Creepy Clown</h5>
-            <p class="card-text text-orange-500">$39.99</p>
-            <button class="btn btn-primary" (click)="addToCart('Creepy Clown')">Add to Cart</button>
+            <h5 class="card-title text-white">{{ product.name }}</h5>
+            <p class="card-text text-orange-500">R{{ product.price | number: '1.2-2' }}</p>
+            <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
           </div>
         </div>
       </div>
     </div>
-    
+
     <div class="row">
-      <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
+      <div *ngFor="let product of products.slice(6)" class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
         <div class="card bg-zinc-800 border-zinc-700">
-          <img src="assets/images/werewolf.jpg" class="card-img-top" alt="Werewolf Costume">
+          <img [src]="product.image" class="card-img-top" [alt]="product.name">
           <div class="card-body text-center">
-            <h5 class="card-title text-white">Werewolf</h5>
-            <p class="card-text text-orange-500">$59.99</p>
-            <button class="btn btn-primary" (click)="addToCart('Werewolf')">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
-        <div class="card bg-zinc-800 border-zinc-700">
-          <img src="assets/images/skeleton.jpg" class="card-img-top" alt="Skeleton Costume">
-          <div class="card-body text-center">
-            <h5 class="card-title text-white">Skeleton</h5>
-            <p class="card-text text-orange-500">$24.99</p>
-            <button class="btn btn-primary" (click)="addToCart('Skeleton')">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4 animate__animated animate__fadeInRight">
-        <div class="card bg-zinc-800 border-zinc-700">
-          <img src="assets/images/mummy.jpg" class="card-img-top" alt="Mummy Costume">
-          <div class="card-body text-center">
-            <h5 class="card-title text-white">Mummy</h5>
-            <p class="card-text text-orange-500">$34.99</p>
-            <button class="btn btn-primary" (click)="addToCart('Mummy')">Add to Cart</button>
+            <h5 class="card-title text-white">{{ product.name }}</h5>
+            <p class="card-text text-orange-500">R{{ product.price | number: '1.2-2' }}</p>
+            <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
           </div>
         </div>
       </div>
