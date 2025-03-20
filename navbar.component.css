@@ -1,0 +1,45 @@
+.navbar {
+    background: linear-gradient(500deg, #343440, #41414d);
+    border-bottom: 2px solid #ff6f61;
+  }
+  
+  .navbar-brand {
+    font-family: 'Creepster', cursive;
+    font-size: 1.5rem;
+    color: #ff6f61 !important;
+    text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61;
+  }
+  
+  .nav-link {
+    color: #ffffff !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin: 0 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: #ff6f61 !important;
+    text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff6f61;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .nav-link.active {
+    color: #ff6f61 !important;
+    text-shadow: 0 0 10px #ff6f61, 0 0 20px #ff6f61;
+  }
