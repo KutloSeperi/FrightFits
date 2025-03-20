@@ -1,0 +1,121 @@
+<section class="shop-section py-5 bg-dark text-white">
+  <div class="container">
+    <!-- Featured Banner -->
+    <div class="featured-product mb-5 rounded-3 overflow-hidden bg-zinc-900 border border-zinc-700 shadow-lg" *ngIf="featuredProduct">
+      <div class="row g-0 align-items-center">
+        <div class="col-md-6 order-md-2">
+          <img [src]="featuredProduct.image" class="img-fluid scale-on-hover" [alt]="featuredProduct.name">
+        </div>
+        <div class="col-md-6 order-md-1 p-4 p-lg-5">
+          <span class="badge bg-orange-500 mb-3 px-3 py-2 rounded-pill">{{ featuredProduct.badge }}</span>
+          <h3 class="display-5 fw-bold text-orange-500">Season's Bestseller</h3>
+          <h2 class="mb-4">{{ featuredProduct.name }}</h2>
+          <p class="lead text-zinc-400">{{ featuredProduct.description }}</p>
+          <div class="d-flex gap-3 align-items-center">
+            <span class="h3 text-orange-500 mb-0">R{{ featuredProduct.price | number:'1.2-2' }}</span>
+            <del class="text-zinc-500">R{{ featuredProduct.oldPrice | number:'1.2-2' }}</del>
+            <button class="btn btn-orange-500 btn-lg px-4 scale-on-hover shadow-sm" 
+                    (click)="addToCart(featuredProduct)" 
+                    [disabled]="featuredProduct.stock === 0">
+              {{ featuredProduct.stock > 0 ? 'Buy Now' : 'Sold Out' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="category-filters mb-5 text-center">
+      <h4 class="mb-4 text-orange-500">Browse by Category</h4>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <button *ngFor="let cat of ['all', 'horror', 'fantasy', 'classic', 'kids', 'accessories']"
+                class="btn btn-outline-orange-500 category-filter-btn rounded-pill px-4 py-2"
+                [class.active]="selectedCategory === cat"
+                (click)="selectCategory(cat)">
+          {{ cat | titlecase }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Product Grid -->
+    <h2 class="text-center mb-5 display-4 text-orange-500">Popular Costumes</h2>
+    <div class="row g-4">
+      <div *ngFor="let product of filteredProducts" class="col-md-6 col-lg-4">
+        <div class="card bg-zinc-800 border-zinc-700 hover-shadow-lg transition-all h-100 product-card rounded-3 shadow-sm">
+          <div class="position-relative overflow-hidden">
+            <img [src]="product.image" class="card-img-top scale-on-hover" [alt]="product.name">
+            <span *ngIf="product.badge" class="badge position-absolute top-0 start-0 m-3 px-3 py-2 rounded-pill"
+                  [ngClass]="{
+                    'bg-orange-500': product.badge === '-20%' || product.badge === 'Bundle Deal',
+                    'bg-danger': product.badge === 'New',
+                    'bg-success': product.badge === 'Eco-Friendly'
+                  }">
+              {{ product.badge }}
+            </span>
+          </div>
+          <div class="card-body text-center">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h5 class="card-title text-warning mb-0">{{ product.name }}</h5>
+              <div>
+                <span class="text-warning fw-bold">R{{ product.price | number:'1.2-2' }}</span>
+                <del *ngIf="product.oldPrice" class="text-danger small ms-2">
+                  R{{ product.oldPrice | number:'1.2-2' }}
+                </del>
+              </div>
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-orange-500 scale-on-hover shadow-sm" 
+                      (click)="addToCart(product)" 
+                      [disabled]="product.stock === 0">
+                {{ product.stock > 0 ? 'Add to Cart' : 'Out of Stock' }}
+              </button>
+              <button class="btn btn-link text-orange-500 p-0 quick-view-button"
+                      (mouseenter)="product.showQuickView = true"
+                      (mouseleave)="product.showQuickView = false">
+                <span class="d-inline-block">Quick View</span>
+              </button>
+              <div *ngIf="product.showQuickView" class="quick-view-content bg-zinc-800 p-3 rounded shadow">
+                <p class="text-zinc-400 small">{{ product.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Halloween Essentials -->
+    <div class="essentials-grid mt-5 pt-5">
+      <h4 class="text-center mb-5 text-orange-500">Halloween Essentials</h4>
+      <div class="row g-4">
+        <div *ngFor="let essential of essentials; let i = index" class="col-md-3">
+          <div class="card bg-zinc-800 border-zinc-700 text-center p-4 hover-lift h-100 rounded-3 shadow-sm">
+            <!-- Bootstrap Icons Mapping for Essentials -->
+            <i class="bi 
+              {{
+                essential.icon === 'ghost' ? 'bi-moon' : 
+                essential.icon === 'cat' ? 'bi-person-fill' : 
+                essential.icon === 'skull' ? 'bi-x-circle-fill' : 
+                essential.icon === 'spider' ? 'bi-bug' : 
+                'bi-star-fill'
+              }} text-orange-500 h2 mb-3"></i>
+            <h5 class="text-warning">{{ essential.title }}</h5>
+            <p class="text-white">{{ essential.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Preview -->
+    <div class="cart-preview fixed-bottom end-0 m-3 bg-zinc-800 p-3 rounded shadow-lg">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h5 class="mb-0 text-orange-500">Items: {{ cartCount$ | async }}</h5>
+          <small class="text-zinc-400">Total: R{{ (cartTotal$ | async) | number:'1.2-2' }}</small>
+        </div>
+        <a class="btn btn-sm btn-orange-500 px-3 py-2 shadow-sm" routerLink="/cart">
+          View Cart <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

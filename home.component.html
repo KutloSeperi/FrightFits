@@ -1,0 +1,100 @@
+<section class="hero-section bg-dark text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4 animate__animated animate__fadeInDown text">Welcome to FrightFits</h1>
+    <p class="lead animate__animated animate__fadeInUp">Your one-stop shop for spooky Halloween costumes</p>
+    <a routerLink="/shop" class="btn btn-primary btn-lg animate__animated animate__fadeIn">Shop Now</a>
+  </div>
+</section>
+
+<section class="halloween-events py-5 bg-dark text-white">
+  <div class="container">
+    <h2 class="text-center mb-4 display-4 animate__animated animate__fadeIn">Upcoming Halloween Events</h2>
+    <p class="lead text-center mb-5 animate__animated animate__fadeIn">Get ready for the most spook-tacular time of the year! Here’s a look at some of the exciting Halloween events happening near you:</p>
+    <div class="row">
+      <div class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
+        <div class="event-card bg-zinc-800 border-zinc-700 rounded shadow-lg p-4">
+          <h4 class="text-warning">Haunted House Tour</h4>
+          <p class="text-light">Date: October 25th, 2025</p>
+          <p class="text-light">Location: Cape Town, South Africa</p>
+          <p class="text-light">Get ready for a night filled with spooky thrills and spine-chilling sights. The Haunted House Tour offers a terrifying experience for all ages.</p>
+          <a href="#" class="btn btn-outline-light btn-lg btn-hover">Learn More</a>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 animate__animated animate__fadeInUp">
+        <div class="event-card bg-zinc-800 border-zinc-700 rounded shadow-lg p-4">
+          <h4 class="text-warning">Halloween Costume Party</h4>
+          <p class="text-light">Date: October 30th, 2025</p>
+          <p class="text-light">Location: The Spooky Tavern</p>
+          <p class="text-light">Join us for the most wicked Halloween costume party in town! Prizes for the scariest and most creative outfits!</p>
+          <a href="#" class="btn btn-outline-light btn-lg btn-hover">Get Tickets</a>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4 animate__animated animate__fadeInRight">
+        <div class="event-card bg-zinc-800 border-zinc-700 rounded shadow-lg p-4">
+          <h4 class="text-warning">Zombie Run</h4>
+          <p class="text-light">Date: October 31st, 2025</p>
+          <p class="text-light">Location: Downtown Cape Town</p>
+          <p class="text-light">Race through the city in a thrilling Zombie Run! Can you survive the terrifying chase? A fun and adrenaline-packed event for all ages!</p>
+          <a href="#" class="btn btn-outline-light btn-lg btn-hover">Join the Run</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-products py-5 bg-zinc-900 text-white">
+  <div class="container">
+    <h2 class="text-center mb-5 display-4 animate__animated animate__fadeIn">Featured Products</h2>
+    <div class="row">
+      <div *ngFor="let product of products.slice(0, 3)" class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
+        <div class="card bg-zinc-800 border-zinc-700">
+          <img [src]="product.image" class="card-img-top" [alt]="product.name">
+          <div class="card-body text-center">
+            <h5 class="card-title text-warning">{{ product.name }}</h5>
+            <p class="card-text text-orange-500">R{{ product.price | number: '1.2-2' }}</p>
+            <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner Section -->
+    <div class="banner-section bg-dark text-white text-center py-5" style="background-image: url('assets/images/halloween-banner.jpg'); background-size: cover; background-position: center;">
+      <div class="overlay d-flex justify-content-center align-items-center" style="background: rgba(63, 60, 60, 0.5); height: 100%;">
+        <div class="container">
+          <h2 class="display-3 mb-4 text-warning">Spooky Season is Here!</h2>
+          <p class="lead mb-4">Get ready to spook and be spooked. Shop our best-selling costumes today!</p>
+          <a routerLink="/shop" class="btn btn-primary btn-lg mx-2 animate__animated animate__fadeIn">Shop Costumes</a>
+          <a routerLink="/contact" class="btn btn-outline-light btn-lg mx-2 animate__animated animate__fadeIn">Contact Us</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="text-center text-warning mb-5 display-5 animate__animated animate__fadeIn">Best-Sellers</h3>
+    <div class="row">
+      <div *ngFor="let product of products.slice(3, 6)" class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
+        <div class="card bg-zinc-800 border-zinc-700">
+          <img [src]="product.image" class="card-img-top" [alt]="product.name">
+          <div class="card-body text-center">
+            <h5 class="card-title text-warning">{{ product.name }}</h5>
+            <p class="card-text text-orange-500">R{{ product.price | number: '1.2-2' }}</p>
+            <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div *ngFor="let product of products.slice(6)" class="col-md-4 mb-4 animate__animated animate__fadeInLeft">
+        <div class="card bg-zinc-800 border-zinc-700">
+          <img [src]="product.image" class="card-img-top" [alt]="product.name">
+          <div class="card-body text-center">
+            <h5 class="card-title text-warning">{{ product.name }}</h5>
+            <p class="card-text text-orange-500">R{{ product.price | number: '1.2-2' }}</p>
+            <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
