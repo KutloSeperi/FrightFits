@@ -69,14 +69,8 @@
                       [disabled]="product.stock === 0">
                 {{ product.stock > 0 ? 'Add to Cart' : 'Out of Stock' }}
               </button>
-              <button class="btn btn-link text-orange-500 p-0 quick-view-button"
-                      (mouseenter)="product.showQuickView = true"
-                      (mouseleave)="product.showQuickView = false">
-                <span class="d-inline-block">Quick View</span>
-              </button>
-              <div *ngIf="product.showQuickView" class="quick-view-content bg-zinc-800 p-3 rounded shadow">
-                <p class="text-zinc-400 small">{{ product.description }}</p>
-              </div>
+              <!-- Replaced Quick View with a View Details button -->
+              <button class="btn btn-warning" [routerLink]="['/product-list', product.id]">View Details</button>
             </div>
           </div>
         </div>
@@ -92,6 +86,7 @@
             <!-- Bootstrap Icons Mapping for Essentials -->
             <i class="bi 
               {{
+
                 essential.icon === 'ghost' ? 'bi-moon' : 
                 essential.icon === 'cat' ? 'bi-person-fill' : 
                 essential.icon === 'skull' ? 'bi-x-circle-fill' : 
