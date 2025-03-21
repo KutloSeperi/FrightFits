@@ -1,34 +1,55 @@
+@keyframes shimmer {
+  0% { text-shadow: 0 0 5px rgb(175, 117, 8); }
+  50% { text-shadow: 0 0 15px red; }
+  100% { text-shadow: 0 0 5px rgb(156, 60, 15); }
+}
+
 .cart-section {
-    padding: 20px;
-  }
-  
-  .card {
-    margin-bottom: 15px;
-  }
-  
-  .card-img-top {
-    max-height: 200px;
-    object-fit: cover;
-  }
-  
-  .btn-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
-  }
-  
-  .btn-danger:hover {
-    background-color: #c82333;
-    border-color: #bd2130;
-  }
-  
-  .text-orange-500 {
-    color: #ff6b35;
-  }
-  
-  .bg-zinc-800 {
-    background-color: #1f2937;
-  }
-  
-  .border-zinc-700 {
-    border-color: #374151;
-  }
+  background: #121212; /* Dark spooky background */
+  color: white;
+}
+
+.cart-section h2 {
+  font-family: 'Creepster', cursive;
+  animation: shimmer 2s infinite alternate;
+}
+
+.card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+}
+
+.card-body h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.text-orange-500 {
+  color: #ff6600 !important;
+}
+
+.btn-danger {
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-danger:hover {
+  background-color: red;
+  transform: scale(1.1);
+}
+
+.btn-primary {
+  background-color: #ff6600;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #cc5500;
+  transform: scale(1.05);
+}

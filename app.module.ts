@@ -16,6 +16,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // Import the cart reducer from your store
 import { cartReducer } from './store/cart/cart.reducer';
+import { ProductListComponent } from './pages/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { cartReducer } from './store/cart/cart.reducer';
     CartComponent,
     AboutComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

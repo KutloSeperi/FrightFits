@@ -1,4 +1,4 @@
-<section class="cart-section py-5 bg-dark text-white">
+<section class="cart-section py-5 bg-dark text-orange-500">
   <div class="container">
     <h2 class="text-center mb-5 display-4">Your Cart</h2>
     
@@ -6,7 +6,8 @@
     <div class="row mb-5">
       <div class="col-12">
         <div class="card bg-zinc-800 border-zinc-700 p-4 text-center">
-          <i class="fas fa-shopping-cart h2 text-orange-500 mb-3"></i>
+          <!-- Bootstrap icon for shopping cart -->
+          <i class="bi bi-cart-fill h2 text-orange-500 mb-3"></i>
           <h3 class="text-white">Welcome to Your Haunted Cart!</h3>
           <p class="text-warning mb-0">
             Your spooky treasures are gathered here. Ready to conjure up some magic and claim your eerie deals?
@@ -19,7 +20,7 @@
       <div class="col-md-8">
         <!-- Cart Items -->
         <div *ngIf="cartItems.length === 0" class="text-center">
-          <p class="text-zinc-400">Your cart is empty.</p>
+          <p class="text-zinc-400">Get something in your cart!.</p>
         </div>
         <div *ngFor="let item of cartItems; let i = index" class="card mb-3 bg-zinc-800 border-zinc-700">
           <div class="row g-0">
