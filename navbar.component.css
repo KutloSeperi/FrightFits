@@ -2,6 +2,43 @@
     background: linear-gradient(500deg, #343440, #41414d);
     border-bottom: 2px solid #ff6f61;
   }
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+  }
+  
+  @keyframes glow {
+    0% { filter: drop-shadow(0 0 5px orange); }
+    50% { filter: drop-shadow(0 0 15px red); }
+    100% { filter: drop-shadow(0 0 5px orange); }
+  }
+  
+  @keyframes spooky-text {
+    0% { color: orange; }
+    50% { color: red; text-shadow: 0 0 10px black; }
+    100% { color: orange; }
+  }
+  .navbar-brand span {
+    animation: spooky-text 3s infinite alternate;
+    font-family: 'Creepster', cursive;
+    font-size: 1.8rem; /* Increased font size */
+    letter-spacing: 2px; /* Adds a spooky stretched effect */
+  }
+  
+  .navbar-brand img {
+    animation: float 3s infinite ease-in-out, glow 2s infinite alternate;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .navbar-brand img:hover {
+    transform: scale(1.1) rotate(-3deg);
+  }
+  
+  .navbar-brand span {
+    animation: spooky-text 3s infinite alternate;
+    font-family: 'Creepster', cursive;
+  }
   
   .navbar-brand {
     font-family: 'Creepster', cursive;
