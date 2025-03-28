@@ -18,7 +18,7 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/cart" routerLinkActive="active">
             Cart 🛒
-            <!-- Check that cartItemsCount$ is defined and has value greater than 0 -->
+            <!-- Check that cartItemsCount-->
             <span class="badge rounded-pill bg-danger" *ngIf="(cartItemsCount$ | async) as cartCount; else noItems">
               {{ cartCount }}
             </span>
