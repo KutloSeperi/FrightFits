@@ -1,5 +1,5 @@
 export interface Product {
-    id?: number;         // Optional for Home products (which don’t define an ID)
+    id?: number;         
     name: string;
     price: number;
     image: string;
