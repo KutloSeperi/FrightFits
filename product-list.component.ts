@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductListComponent implements OnInit {
   product: any; // Product object to store the selected product details
-  products$!: Observable<any[]>; // To observe products from store if you are using NgRx for state management.
+  products$!: Observable<any[]>; 
 
   constructor(private route: ActivatedRoute, private store: Store) {}
 
